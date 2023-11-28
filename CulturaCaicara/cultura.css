@@ -1,0 +1,1140 @@
+/* variaveis de cores */
+:root{
+    /* Paleta de cores:
+    -a cor neutra escura vai ser usada para acentuar algo em contraste com
+a cor neutra mais clara ou branco
+    -a cor neutra clara vai servir pra mostrar a inatividade dos 
+tópicos do menu, alem de ser um bom suavizador de fundo quando estivermos
+usando branco demais no fundo
+    -o azul titulos vai ser usado em locais de destaque tambem,
+para acentuar algo em um fundo claro...*/
+    --Neutro: #9E9282;
+    --AzulTitulos: #60849C;
+    --AzulClaro: #dae4eb;
+    --NeutroClaro: #EAE3D9;
+    --Light: #FEFEFE;
+}
+
+/* configurações da página */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Sora:wght@100;200;400;700;800&display=swap');
+    
+@font-face {
+    font-family: 'Carmen';
+    src: url('Carmen\ Sans\ Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+html{
+    scroll-behavior: smooth;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    }
+body{
+    width: 100%;
+    background-color: #e0e1ed;
+    font-family: 'Sora', sans-serif;
+    /* overflow-y: hidden; */
+    scroll-behavior: smooth;
+}   
+
+/* header em telas maiores */
+.logo{
+    width: 10vh;
+    border-radius: 50%;
+    margin: 1vw 0 0 8vw;
+}
+a{
+    color: var(--NeutroClaro);
+    text-decoration: none;
+    transition: all 0.5s ease;
+    position: relative;
+    
+}
+nav{
+    width: 100%;
+    z-index: 1000px;
+    /* background-color: var(--AzulTitulos); */
+    background-color: transparent;
+    display: flex;
+    height: 10vh;
+    flex-direction: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+}
+ul{
+    display: flex;
+    list-style-type: none;
+    margin-right: 8vw;
+}
+li{
+    margin: 0 2.2vw;
+}
+
+/* barrinhas abaixo dos links */
+a.links::after,::before{
+    content: ' ';
+    width: 10%;
+    height: 2.2px;
+    background-color: var(--Light);
+    position: absolute;
+    bottom: -5px;
+    opacity: 0;
+    transition: all 0.7s ease;
+}
+a.links::after{
+    left: 50%;
+}
+a.links::before{
+    right: 50%;
+}
+a:hover{
+    color: var(--Light);
+}
+a.links:hover::after{
+
+    opacity: 1;
+    width: 50%;
+}
+a.links:hover::before{
+
+    opacity: 1;
+    width: 50%;
+}
+a.links.actived::before{
+    width: 50%;
+    opacity: 1;
+}
+a.links.actived::after{
+    width: 50%;
+    opacity: 1;
+}
+
+/* css do menu hamburguer */
+.containerH{
+    height: auto;
+    width: auto;
+    position: relative;
+    padding: 4px 8px 4px 8px;
+    overflow: hidden;
+    display: none;
+}
+.bars{
+    background-color: var(--NeutroClaro);
+    height: 1.5px; 
+    width: 28px;
+    margin-top: 4.5px;
+    transition: all 0.3s ease;
+
+}
+.bars.index{
+    background-color: var(--NeutroClaro); 
+    position: absolute;
+}
+.bar.left, .bar.right{
+
+    display: inline-block;
+    position: relative;
+    background-color: var(--NeutroClaro);
+    width: 14px;
+    height: 1.5px;
+    transition: all 0.3s ease;
+}
+.bar.base{
+
+    margin-bottom: 8px;
+}
+.bar.top{
+
+    top: 4px;
+
+}
+.containerH:hover{
+
+    cursor: pointer;
+}
+.containerH.active .bar.left{
+    
+    translate: -35px;
+}
+.containerH.active .bar.right{
+
+    translate: 35px;
+}
+.containerH.active .bars.index{
+
+    rotate: -45deg;
+    background-color: rgb(142, 31, 31)
+}
+.containerH.active .bars.bottom{
+    
+    rotate: 45deg;
+    background-color: rgb(232, 97, 97);
+}
+/* ---------------------------------------------- */
+/* botão voltar para cima---------------- */
+.ButtonUp{
+    width: 7vh;
+    height: 7vh;
+    cursor: pointer;
+    background-color: var(--Neutro);
+    border-radius: 50%;
+    position: fixed;
+    display: flex;
+    right: 15px;
+    bottom: 15px;
+    align-items: center;
+    justify-content: center;
+    font-size: 5vh;
+    z-index: 1;
+}
+/* botão das redes sociais----------------- */
+.containerRedes{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-evenly;
+    background-color: #b6b0b0;
+    transition: all ease 0.6s;
+    position: absolute;
+    z-index: 1000;
+    top: 44%;
+    right: 0;
+}
+.containerRedes:hover{
+    background-color: #857d7d;
+}
+
+.link{
+    background-color: #f7f5f5;
+    width: 35px;
+    height: 35px;
+    box-shadow: 0 0 8px #0000005a;
+    margin: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    font-size: 40px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+
+.link svg{
+    z-index: 10;
+    scale: 1.2;
+    transition: 0.2s;
+}
+
+.link:hover svg{
+    color: #ffffff;
+    transform: scale(1.3);
+}
+
+.link-1{
+    color: rgb(114, 162, 207);
+}
+
+.link-2{
+    color: rgb(221, 206, 120);
+}
+
+.link-3{
+    color: rgb(114, 162, 207);
+}
+
+.link-1:hover{  
+    background-color: rgb(114, 162, 207);
+}
+
+.link-2:hover{  
+    background-color:  rgb(221, 206, 120);
+
+}
+
+.link-3:hover{
+    background-color: rgb(114, 162, 207);
+
+}
+/*------------ acaba aqui o botão das redes sociais------- */
+
+.inicio{
+    height: calc(var(--vh, 1vh) * 100);
+    background-image: url(Cultura_Img/BarcosEscuro.jpg);
+    background-position: center;
+    background-size: cover;
+    display: block;
+    width: 100%;
+    color: var(--Light);
+    font-family: 'Inter', sans-serif; 
+}
+
+.BemVindo{
+    font-size: 55pt;
+    width: fit-content;
+    display: block;
+    position: relative;
+    font-weight: 700;
+    left: 70px;
+    top: 150px;
+}
+.BemVindoLegenda{
+    font-size: 15pt;
+    display: block;
+    width: 700px;
+    position: relative;
+    left: 75px;
+    top: 170px;
+}
+@media screen and (max-width: 800px){
+    .BemVindo{
+        font-size: 50pt;
+
+    }
+    .BemVindoLegenda{
+        width: 600px;
+    }
+    .inicio{
+        padding: 3px 20px 20px 20px;
+    }
+}
+.btn{
+    display: block;
+    position: relative;
+    border-radius: 0;
+    left: 75px;
+    top: 170px;
+}
+.titulosSessoes{
+    color: var(--AzulTitulos);
+    text-align: center;
+    font-weight: 600;
+    font-size: 38px;
+    line-height: 1.15;
+    font-weight: 900;
+
+}
+.texto{
+    margin-top: 12px;
+    font-size: 20px;
+    font-weight: 100;
+    text-align: center;
+    color: #565656;
+}
+/* 🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑Culinária🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑*/
+.SessaoCulinaria{
+    min-height: calc(var(--vh, 1vh) * 100);
+    position: relative;
+    height: fit-content;
+    padding: 40px 0 50px 0;
+}
+
+.paragrafos.PCulinaria{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.texto.Culinaria{
+    width: 65%;
+    text-align: center;
+    color: #565656;
+    
+}
+.cards{
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+.card{
+    display: inline-block;
+    margin: 15px;
+    border-radius: 0;
+    background-color: transparent;
+    border: none;
+    color: #565656;
+}
+.card:hover{
+    border-bottom: 1px solid black;
+    color: #151515;
+    transform: translateY(-25px) !important;
+}
+.seta{
+    transition: all 1s ease-out;
+    width: 35px;
+
+}
+.card:hover .seta{
+    transform: translateX(10px);
+    scale: 1.1;
+    transition: all 1s ease-out;
+    cursor: pointer;
+}
+.card-img-top{
+    border-radius: 0;
+}
+.receitas{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    transition: all 0.4s ease;
+    background-color: var(--NeutroClaro);
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+    padding: 45px;
+    overflow: hidden;
+}
+.receitas.receitasAtivo{
+    opacity: 1;
+    visibility: visible;
+}
+.receitas svg{
+    transition: all 0.5s ease;
+}
+.receitas svg:hover{
+    cursor: pointer;
+    transition: all 0.5s ease;
+    transform: rotate(90deg);
+    scale: 1.2;
+}
+.fecharReceita{
+    position: absolute;
+    top: 70px;
+}
+.receitas-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    padding: 25px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.imagens-receitas{
+    height: 50%;
+}
+.receita-textos{
+    padding: 40px;
+    width: 35%;
+    max-width: 500px;
+    min-width: 500px;
+    line-height: 1.8;
+}
+.receita-titulo{
+    line-height: 1.5;
+}
+@media screen and (min-width:1200px){
+    .imagens-receitas{
+        width: 50%;
+        height: auto;
+    }
+}
+@media screen and (max-width:720px){
+    .texto.Culinaria{
+        width: 85%;
+        font-size: 16px;
+    }
+    .imagens-receitas{
+        width: 80%;
+        height: auto;
+    }
+}
+@media screen and (max-width: 630px){
+    .receita-textos{
+        min-width: 400px;
+    }
+    .receitas{
+        padding-top: 20px;
+        
+    }
+}
+@media screen and (max-width: 400px){
+    .texto.Culinaria{
+        width: 100%;
+        text-align: left;
+        padding-left: 15px;
+    }
+    .imagens-receitas{
+        width: 150%;
+        height: auto;
+    }
+}
+@media screen and (max-width: 300px){
+    .imagens-receitas{
+        width: 170%;
+        height: auto;
+    }
+    .receita-textos{
+        min-width: 290px;
+        font-size: 15.5px;
+    }
+}
+
+
+/* 🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑Religiao🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑*/
+.SessaoReligiao{
+    height: calc(var(--vh, 1vh) * 100);
+    overflow: hidden;
+}
+.religiaoTitulo{
+    width: fit-content;
+    margin-bottom: 15px;
+    text-decoration: underline;
+    color: var(--AzulTitulos);
+    font-weight: 900;
+}
+.divReligiao{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-color: #fef7e6;
+}
+.ImgReligiao{
+    width: 50%;
+    height: 100%;
+    background-color: var(--AzulTitulos);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.paragrafos.PReligiao{
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+.relgiaoCenter{
+    width: 70%;
+    margin: 30px 0 5px 0;
+    height: fit-content;
+}
+.textoReligiao{
+    font-size: 18px;
+    color: #565656;
+    text-align: justify;
+}
+@media screen and (max-width: 1700px){
+    /* 🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑Religiao🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑*/
+    .ImgReligiao{
+        padding: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .ImgReligiao img{
+        height: auto;
+        width: 70%;
+    }
+}
+@media screen and (max-width: 1200px){
+    /* 🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑Religiao🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑*/
+    .relgiaoCenter{
+        width: 80%;
+        height: 570px;
+}
+}
+@media screen and (max-width: 1040px){
+    .relgiaoCenter{
+    width: 90%;
+    height: 570px;
+}
+.ImgReligiao img{
+    height: auto;
+    max-width: calc(100% - 10px);
+}
+}
+@media screen and (max-width: 940px){
+    /* 🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑Religiao🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑*/
+    .SessaoReligiao{
+        height: fit-content;
+        
+    }
+    .divReligiao{
+        flex-direction: column;
+    }
+    .ImgReligiao{
+        width: 100%;     
+    }
+    .ImgReligiao img{
+        width: auto;
+        max-height: 50vh;
+    }
+    .paragrafos.PReligiao{
+        width: 92%;
+        height: 100%;
+    }
+    .relgiaoCenter{
+    width: 100%;
+    height: 100%;
+}
+}
+/* 🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑Musica e Instrumentos🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑*/
+.SessaoMusica{
+    background-color: var(--Neutro);
+    min-height: calc(var(--vh, 1vh) * 100);
+    height: fit-content;
+    padding: 80px 0;
+
+}
+.titulosSessoes.Musica{
+    color: #3b3838;
+}
+.texto.Musica{
+    padding: 5px;
+    color:#3b3838;
+}
+.instrumentos{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    height: auto;
+    justify-content: space-evenly;
+
+}
+@media  screen and (min-width: 600px) {
+    .instrumentos>*{
+        width: 50%;
+    }
+}
+@media (min-width: 800px){
+    .instrumentos{
+        flex-wrap: nowrap;
+        height: auto;
+        align-items: stretch;
+
+    }
+    .instrumentos>*{
+        width: calc(100% / 4);
+        max-width: 320px;
+    }
+    .icones{
+        margin-bottom: 0;
+    }
+}
+.texto.Instrumentos{
+    margin: 0;
+    font-size: 15px;
+    width: 85%;
+}
+.instInterno{
+    height: 430px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.instInterno img{
+    width: 180px;
+    height: auto;
+    position: absolute;
+    top: 0;
+    z-index: 100;
+}
+.instInterno:nth-of-type(1) img{
+    animation: upDown 6s ease 2s infinite;
+}
+.instInterno:nth-of-type(2) img{
+    animation: upDown 6s ease 3s infinite;
+}
+.instInterno:nth-of-type(3) img{
+    animation: upDown 6s ease 4s infinite;
+}
+.instInterno:nth-of-type(4) img{
+    animation: upDown 6s ease 5s infinite;
+}
+.icones{
+    margin-top: 120px;
+    margin-bottom: 25px;
+    z-index: 1;
+    width: 145px;
+    height: 145px;
+    background: #937859;
+    border-radius: 50%;
+}
+
+@keyframes upDown {
+    0%, 100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-1.2rem);
+    }
+}
+
+/* 🪸🪸🪸🪸🪸🪸🪸🪸🪸🪸🪸🪸🪸🪸🪸🪸🪸Danças🪸🪸🪸🪸🪸🪸🪸🪸🪸🪸🪸🪸🪸🪸🪸🪸🪸🪸🪸🪸🪸*/
+.SessaoDancas{
+    background-color: var(--NeutroClaro);
+    min-height: calc(var(--vh, 1vh) * 100);
+    height: fit-content;
+
+}
+.separador{
+    display: flex;
+    flex-flow: row wrap;
+}
+.separador.order{
+    flex-direction: row-reverse;
+}
+.paragrafos.Dancas{
+    width: 50%;
+    min-height: calc(var(--vh, 1vh) * 100);
+    background-color: var(--AzulTitulos);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.videos{
+    width: 50%;
+    min-height: calc(var(--vh, 1vh) * 100);
+    background-color: #565656;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.dancasCenter{
+    max-width: 450px;
+    padding: 0 9px;
+}
+.dancasTitulos{
+    font-size: 34px;
+    font-weight: 900;
+    padding-bottom: 10px;
+}
+.textoDancas{
+    font-size: 20px;
+}
+@media screen and (max-width: 1000px){
+    .separador, .separador.order{
+        height: fit-content;
+        flex-flow: column;
+    }
+    .videos, .paragrafos.Dancas{
+        width: 100%;
+    }
+    .paragrafos.Dancas{
+        padding: 18px 8px 15px 8px;
+        
+    }
+    .textoDancas{
+        font-size: 16px;
+    }
+}
+/* 🐚🐚🐚🐚🐚🐚🐚🐚🐚🐚🐚🐚🐚🐚🐚festividades🐚🐚🐚🐚🐚🐚🐚🐚🐚🐚🐚🐚*/
+.SessaoFestividades{
+    min-height: calc(var(--vh, 1vh) * 100);
+    background-color: var(--NeutroClaro);
+    position: relative;
+}
+.fandango.FAtivo{
+    opacity: 1;
+    height: 220px;
+    overflow: hidden;
+    transition: all 1s  ease-out;
+}
+.saoGoncalo.FAtivo{
+    opacity: 1;
+    height: 220px;
+    overflow: hidden;
+    transition: all 1s  ease-out;
+}
+.santacruz.FAtivo{
+    opacity: 1;
+    height: 220px;
+    overflow: hidden;
+    transition: all 1s  ease-out;
+}
+.fandango{
+    width: 100%;
+    opacity: 0;
+    position: absolute;
+    overflow: hidden;
+    min-height: calc(var(--vh, 1vh) * 100);
+    transition: all 0.9s  ease-out;
+    background-image: url(Cultura_Img/FandangoFotos.png);
+    background-position: center;
+    background-size: cover;
+    
+}
+.saoGoncalo{
+    width: 100%;
+    opacity: 0;
+    position: absolute;
+    overflow: hidden;
+    min-height: calc(var(--vh, 1vh) * 100);
+    transition: all 0.9s  ease-out;
+    background-image: url(Cultura_Img/saoGoncalo.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.santacruz{
+    width: 100%;
+    opacity: 0;
+    position: absolute;
+    overflow: hidden;
+    min-height: calc(var(--vh, 1vh) * 100);
+    transition: all 0.9s  ease-out;
+    background-image: url(Cultura_Img/santacruz.png);
+    background-position: center;
+    background-size: cover;
+}
+.centralizar{
+    width: 45%;
+    height: calc(var(--vh, 1vh) * 100);
+    color: var(--Light);
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    padding: 0 0 0 10%;
+}
+.navFest{
+    width: 300px;
+    height: fit-content;
+    transition: all ease 0.6s;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-end;
+    position: absolute;
+    top: 44%;
+    right: 0;
+    padding: 0 5px 0 0;
+    color: #e0e1ed;
+}
+.iconF, .iconG, .iconC{
+    transition: all ease 0.6s;
+}
+.iconF span, .iconG span, .iconC span{
+    display: none;
+} 
+.iconF img, .iconG img, .iconC img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+    transform: translateX(0%);
+    margin: 10px 20px 10px 20px;
+}
+.iconF:hover{
+    filter: grayscale(1);
+    transform: translate(-20%);
+    cursor: pointer;
+}
+
+.iconG:hover{
+    filter: grayscale(1);
+    transform: translate(-20%);
+    cursor: pointer;
+}
+
+.iconC:hover{
+    filter: grayscale(1);
+    transform: translate(-20%);
+    cursor: pointer;
+}
+@media screen and (max-width: 690px){
+    .centralizar{
+        width: 100%;
+        padding: 20px;
+        align-content: center;
+    }
+    .navFest{
+        width: 280px;
+        top: 50px;
+        left: calc(50% - 150px);
+        flex-flow: row;
+        align-items: center;
+    }
+    .iconF img, .iconG img, .iconC img{
+        margin: 10px 0px 30px 30px;
+    }
+}
+@media screen and (max-width: 260px){
+    .iconF img, .iconG img, .iconC img{
+        width: 55px;
+        height: 55px;
+    }
+    .navFest{
+        width: 100%;
+    }
+    .titulosSessoes.Musica{
+        font-size: 32px;
+    }
+}
+
+/* 🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼footerrr 🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼*/
+footer{
+    width: 100%;
+    min-height: 260px;
+    height: fit-content;
+    overflow: hidden;
+    background-color: var(--AzulTitulos);
+}
+.footerSeparador{
+    display: flex;
+    padding: 15px 20px 8px 0;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.logo.footer{
+    margin: 0 10px 0 0;
+    width: 65px;
+}
+ol{
+    list-style: none;
+    display: flex;
+    transition: all 0.8s linear;
+    color: #cbcbcb;
+    font-weight: lighter;
+}
+ol>*:hover{
+    color: var(--Light);
+    transition: all 0.8s linear;
+    text-decoration: underline;
+}
+.footerTitulo{
+    width: fit-content;
+    margin-top: 10px;
+    color: var(--Light);
+    font-weight: bold;
+
+}
+.footerNav{
+    margin-top: 15px;
+    width: fit-content;
+    float: right;
+    margin-left: 0;
+}
+.footerLogo{
+    width: fit-content;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.divisor{
+        width: 95%;
+        color: #fff;
+        margin: 1% auto 1% auto;
+}
+.footerDescricao{
+    color: #cbcbcb;
+    font-size: 12px;
+    margin: 15px 0 0 10%;
+    max-width: 270px;
+}
+.footerRedes{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0 20px 0;
+}
+.link.RedesF{
+    scale: 0.9;
+    margin: 4px;
+    box-shadow: none;
+}
+.link.RedesF:hover{
+    width: 8%;
+}
+.ano{
+    text-align: center;
+    margin: 15px 0 5px 0;
+    color: var(--Light);
+
+}
+/* footer responsivo */
+@media screen and (max-width: 810px){
+    .footerSeparador{
+        flex-direction: column;
+    }
+    ol{
+        padding: 0;
+    }
+    .footerSeparador{
+        padding: 15px 0;
+    }
+    .link.RedesF:hover{
+        width: 15%;
+    }
+}
+@media screen and (max-width: 535px){
+    .link.RedesF{
+        scale: 0.9;
+        margin: 4px;
+        box-shadow: none;
+    }
+    .link.RedesF:hover{
+        width: 20%;
+    }
+}
+@media screen and (max-width: 380px){
+    .footerSeparador{
+        height: fit-content;
+        padding-bottom: 0;
+    }
+    .footerNav{
+        height: fit-content;
+    }
+    ol{
+        flex-direction: column;
+    }
+    .footerLogo{
+        margin-left: 18px;
+    }
+    .footerTitulo{
+        margin: 0;
+    }
+    .footerDescricao{
+        margin-top: 0;
+    }
+}
+
+/*em telas menores */
+@media screen and (max-width: 720px){
+/* header responsivo */
+    nav{
+        padding: 0;
+        width:100%;
+        height: 10vh;
+        max-height: 12vh;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        
+    }
+    .logo{
+        width: 8vh;
+    }
+
+    ul{
+        width: 22vh;
+        padding: 0 2px 0 0;
+        margin: 0;
+        flex-direction: column;
+        justify-items: center;
+        position: absolute;
+        top: 10vh;
+        right: 0;
+        height: 0;
+        background-color: var(--AzulTitulos);
+        transition: all 0.7s  ease-out;
+        overflow: hidden;
+        z-index: 1;       
+    }
+    /* classe que faz as animações de dropdown dos links da navbar */
+    .list.show{
+        height: 280px;
+        background-color: var(--AzulTitulos);
+        overflow: hidden;
+        transition: all 0.7s  ease-out;
+    }
+    li{
+        margin: 10px auto 10px auto;
+        padding: 5px;
+    }
+    .containerH{
+        display: block;
+        margin: 0 10vw;
+        height: auto;
+        min-width: 46px;
+    }
+
+.BemVindo{
+    font-size: 22pt;
+    width: 90%;
+    display: block;
+    position: relative;
+    font-weight: 700;
+    left: 10px;
+    top: 100px;
+}
+.BemVindoLegenda{
+    font-size: 10pt;
+    display: block;
+    width: 85%;
+    position: relative;
+    left: 10px;
+    top: 110px;
+}
+.btn{
+    display: block;
+    position: relative;
+    border-radius: 0;
+    left: 10px;
+    top: 150px;
+}
+.textoCulinaria{
+    text-align: left;
+    width: 85%;
+}
+
+/* botão das redes sociais */
+.containerRedes{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-evenly;
+    background-color: #b6b0b0;
+    transition: all ease 0.6s;
+    position: fixed;
+    z-index: 1000;
+    top: 44%;
+    right: 0;
+    display: none;
+}
+.cards{
+    margin-top: 5px;
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    display: flex;
+    overflow-x: auto;
+    justify-content: flex-start;
+    color:#151515;
+}
+    .card{
+        min-width: 75%;
+        min-height: 40%;
+        margin: 10px;
+        color:#151515;
+
+    }
+
+/* 🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑Religiao🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑*/
+.textoReligiao{
+    font-size: 16px;
+    color: #565656;
+    text-align: left;
+}
+.texto.Musica{
+    padding: 5px;
+    color:#3b3838;
+    font-size: 16px;
+}
+}
+
