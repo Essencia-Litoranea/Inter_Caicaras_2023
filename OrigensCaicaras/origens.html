@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="generator" content="WYSIWYG Web Builder 17 - https://www.wysiwygwebbuilder.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="imagem/png" href="assets/origens_img/logo_janela.jpeg" type="image/x-icon/">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css" crossorigin="">
+
+      <!--=============== SWIPER CSS ===============-->
+      <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+      <!--=============== CSS ===============-->
+      <link rel="stylesheet" href="assets/css/origens_style.css">
+    <title>Origens</title>
+     <!-- bootstrap css -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+     <style>
+ /* header em telas maiores */
+ /* variaveis de cores */
+ :root{
+     /* Paleta de cores:
+     -a cor neutra escura vai ser usada para acentuar algo em contraste com
+ a cor neutra mais clara ou branco
+     -a cor neutra clara vai servir pra mostrar a inatividade dos 
+ tópicos do menu, alem de ser um bom suavizador de fundo quando estivermos
+ usando branco demais no fundo
+     -o azul titulos vai ser usado em locais de destaque tambem,
+ para acentuar algo em um fundo claro...*/
+     --Neutro: #9E9282;
+     --AzulTitulos: #60849C;
+     --AzulClaro: #dae4eb;
+     --NeutroClaro: #EAE3D9;
+     --Light: #FEFEFE;
+ }
+ 
+ /* configurações da página */
+ @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Sora:wght@100;200;400;700;800&display=swap');
+    
+ @font-face {
+     font-family: 'Carmen';
+     src: url('Carmen\ Sans\ Regular.otf') format('opentype');
+     font-weight: normal;
+     font-style: normal;
+ }
+ html{
+     scroll-behavior: smooth;
+ }
+ *{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     }
+ body{
+     background-color: #fdfdfd;
+     background-size: cover;
+     background-attachment: fixed;
+     font-family: 'Sora', sans-serif;
+     overflow-x: hidden;
+     scroll-behavior: smooth;
+ } 
+ /* header em telas maiores */
+ .logo{
+     width: 10vh;
+     border-radius: 50%;
+     margin: 1vw 0 0 8vw;
+ }
+ a{
+     color: var(--NeutroClaro);
+     text-decoration: none;
+     transition: all 0.5s ease;
+     position: relative;
+     
+ }
+ nav{
+     width: 100%;
+     z-index: 1000px;
+     /* background-color: var(--AzulTitulos); */
+     background-color: transparent;
+     display: flex;
+     height: 10vh;
+     flex-direction: row wrap;
+     align-items: center;
+     justify-content: space-between;
+     padding: 30px;
+ }
+ ul{
+     display: flex;
+     list-style-type: none;
+     margin-right: 8vw;
+ }
+ li{
+     margin: 0 2.2vw;
+ }
+ 
+ /* barra link */
+ a.links::after,::before{
+     content: ' ';
+     width: 10%;
+     height: 2.2px;
+     background-color: var(--Light);
+     position: absolute;
+     bottom: -5px;
+     opacity: 0;
+     transition: all 0.7s ease;
+ }
+ a.links::after{
+     left: 50%;
+ }
+ a.links::before{
+     right: 50%;
+ }
+ a:hover{
+     color: var(--Light);
+ }
+ a.links:hover::after{
+ 
+     opacity: 1;
+     width: 50%;
+ }
+ a.links:hover::before{
+ 
+     opacity: 1;
+     width: 50%;
+ }
+ a.links.actived::before{
+     width: 50%;
+     opacity: 1;
+ }
+ a.links.actived::after{
+     width: 50%;
+     opacity: 1;
+ }
+ 
+ /* css do menu hamburguer */
+ .containerH{
+     height: auto;
+     width: auto;
+     padding: 4px 8px 4px 8px;
+     overflow: hidden;
+     display: none;
+ }
+ .bars{
+     background-color: var(--NeutroClaro);
+     height: 1.5px; 
+     width: 28px;
+     margin-top: 4.5px;
+     transition: all 0.3s ease;
+ 
+ }
+ .bars.index{
+     background-color: var(--NeutroClaro); 
+     position: absolute;
+ }
+ .bar.left, .bar.right{
+ 
+     display: inline-block;
+     position: relative;
+     background-color: var(--NeutroClaro);
+     width: 14px;
+     height: 1.5px;
+     transition: all 0.3s ease;
+ }
+ .bar.base{
+ 
+     margin-bottom: 8px;
+ }
+ .bar.top{
+ 
+     top: 4px;
+ 
+ }
+ .containerH:hover{
+ 
+     cursor: pointer;
+ }
+ .containerH.active .bar.left{
+     
+     translate: -35px;
+ }
+ .containerH.active .bar.right{
+ 
+     translate: 35px;
+ }
+ .containerH.active .bars.index{
+ 
+     rotate: -45deg;
+     background-color: rgb(142, 31, 31)
+ }
+ .containerH.active .bars.bottom{
+     
+     rotate: 45deg;
+     background-color: rgb(232, 97, 97);
+ }
+ /*Fim do style de navegação*/
+ 
+ /*Scrool indicator*/
+ .header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: #f1f1f1;
+}
+
+
+/* The progress bar (scroll indicator) */
+.progress-bar {
+  height: 8px;
+  background: #60849C;
+  width: 0%;
+}
+ 
+ .comeco{
+     height: calc(var(--vh, 1vh) * 100);
+     padding-left: 5%;
+     background-image: url(assets/origens_img/BarcoECanoa.png);
+     background-position: center;
+     background-size: cover;
+     display: block;
+     color: var(--Light);
+     font-family: 'inter', sans-serif;
+ }
+ .introducao{
+     font-size: 55pt;
+     width: fit-content;
+     display: block;
+     position: relative;
+     font-weight: 700;
+     top: 150px;
+ }
+ .introducaolegenda{
+    font-size: 10pt;
+    margin-bottom: 20px;
+    width: fit-content;
+     font-size: 15pt;
+     position: relative;
+     top: 150px;
+ }
+ .btn{
+     display: block;
+     position: relative;
+     border-radius: 0;
+     top: 170px;
+ }
+ 
+ /* botão das redes sociais */
+ .containerRedes{
+     width: fit-content;
+     height: fit-content;
+     display: flex;
+     flex-direction: column;
+     align-content: center;
+     justify-content: space-evenly;
+     background-color: #b6b0b0;
+     transition: all ease 0.6s;
+     position: absolute;
+     z-index: 1000;
+     top: 44%;
+     right: 0;
+ }
+ .containerRedes:hover{
+     background-color: #857d7d;
+ }
+ 
+ .link{
+     background-color: #f7f5f5;
+     width: 35px;
+     height: 35px;
+     box-shadow: 0 0 8px #0000005a;
+     margin: 8px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     border-radius: 50px;
+     font-size: 40px;
+     position: relative;
+     overflow: hidden;
+     transition: all 0.5s;
+ }
+ 
+ .link svg{
+     z-index: 10;
+     scale: 1.2;
+     transition: 0.2s;
+ }
+ 
+ .link:hover svg{
+     color: #ffffff;
+     transform: scale(1.3);
+ }
+ 
+ .link-1{
+     color: rgb(114, 162, 207);
+ }
+ 
+ .link-2{
+     color: rgb(221, 206, 120);
+ }
+ 
+ .link-3{
+     color: rgb(114, 162, 207);
+ }
+ 
+ .link-1:hover{  
+     background-color: rgb(114, 162, 207);
+ }
+ 
+ .link-2:hover{  
+     background-color:  rgb(221, 206, 120);
+ 
+ }
+ 
+ .link-3:hover{
+     background-color: rgb(114, 162, 207);
+ 
+ }
+
+ /*Quem são*/
+ .default {
+    width: 100vw;
+    overflow: hidden;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    position: relative;
+    top: 0%;
+}
+.default .section-title,
+.default .section-desc {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.default .section-title {
+    font-size:20px ;
+    margin-left: 14%;
+    
+}
+.default .section-desc {
+    font-size: 13px;
+    color: #ccc;
+    margin-top: 10px;
+    margin-bottom: 40px;
+
+}
+.default .section-body {
+    max-width: 1140px;
+    margin: auto;
+}
+.default.light {
+    background-color: #f7f7f7;
+}
+
+.section-aboutus {
+    display: flex;
+}
+.section-aboutus--left {
+    flex: 1;
+}
+.section-aboutus--left p {
+    font-size: 14px;
+    line-height: 25px;
+    margin-right: 20px;
+    padding-left: 30px;
+    color: #000000;
+}
+.section-aboutus--right {
+    width: 520px;
+    text-align:center;
+}
+.section-aboutus--right img {
+    width: 400px;
+    height: 350px;
+    display: block;
+    margin-left: 30px;
+    margin-bottom: 50px;
+    box-shadow: 0px 5px 10px #333;
+}
+.section-aboutus .button:hover {
+    color: #ccc;
+}
+
+
+/*DESCEDENCIA*/
+.descendencia{
+    background-color:var(--Light);
+}
+
+.section-title1{
+
+    text-align:center;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 40px;
+    color:#333;
+}
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 500px;
+  position: relative;
+  margin: 10px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: rgb(135, 181, 223);
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: rgb(114, 162, 207);
+  color: white;
+  transform: rotateY(180deg);
+}
+.flip-card-back:p{
+    text-align: center;
+}
+.img-origem{    
+	width: 70%;
+    height: auto;
+    margin-top: 60px;
+}
+    
+    .secao4-div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 10px;
+        text-align: center;
+    }
+
+
+ /*Carousel Caracteristicas*/
+
+
+/*Consolidação*/
+
+.container1 {
+            width: 100%;
+            margin: auto;
+            position: relative;
+        }
+
+        .contimg {
+            width: 100%;
+            height: 500px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+
+        .container1 .content{
+            position: absolute;
+            top: 60px;
+            left: 4%;
+            padding: 20px;
+            color: #fff;
+        }
+
+        h1{
+            align-items: center;
+        }
+
+        h1, h2, h3 {
+            color: #fff;
+        }
+
+        p {
+            color: #ffffff;
+        }
+
+        li{
+            color: #ffffff;
+        }
+
+        .consolidacao{
+            line-height: 1.6;
+        }
+ /* botão voltar para cima */
+ .ButtonUp{
+     width: 7vh;
+     height: 7vh;
+     cursor: pointer;
+     background-color: var(--Neutro);
+     border-radius: 50%;
+     position: fixed;
+     display: flex;
+     right: 15px;
+     bottom: 15px;
+     align-items: center;
+     justify-content: center;
+     font-size: 5vh;
+     z-index: 1;
+ }
+
+ /*Footer*/
+
+footer{
+  width: 100%;
+  min-height: 260px;
+  height: fit-content;
+  background-color: var(--AzulTitulos);
+}
+.footerSeparador{
+  display: flex;
+  padding: 15px 20px 8px 2vw;
+  align-items: center;
+  justify-content: space-around;
+}
+.logo.footer{
+  margin: 0 10px 0 0;
+  width: 65px;
+}
+ol{
+  list-style: none;
+  display: flex;
+  color: #cbcbcb;
+  font-weight: lighter;
+}
+ol>*:hover{
+  color: var(--Light);
+  transition: all 0.8s linear;
+}
+.footerTitulo{
+  width: fit-content;
+  margin-top: 10px;
+  color: var(--Light);
+  font-weight: bold;
+
+}
+.footerNav{
+  margin-top: 15px;
+  width: fit-content;
+  float: right;
+  margin-left: 0;
+}
+.footerLogo{
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.divisor{
+      width: 95%;
+      color: #fff;
+      margin: 1% auto 1% auto;
+}
+.footerDescricao{
+  color: #cbcbcb;
+  font-size: 12px;
+  margin: 15px 0 0 10%;
+  max-width: 270px;
+}
+.footerRedes{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0 20px 0;
+}
+.link.RedesF{
+  scale: 0.9;
+  margin: 4px;
+  box-shadow: none;
+}
+.link.RedesF:hover{
+  width: 8%;
+}
+.ano{
+  text-align: center;
+  margin: 15px 0 5px 0;
+  color: var(--Light);
+
+}
+
+@media screen and (max-width: 720px){
+  .containerRedes{
+      display: none;
+  }
+}
+/* footer responsivo */
+@media screen and (max-width: 810px){
+  .footerSeparador{
+      flex-direction: column;
+  }
+  ol{
+      padding: 0;
+  }
+  .footerSeparador{
+      padding: 15px 0;
+  }
+  .link.RedesF:hover{
+      width: 15%;
+  }
+}
+@media screen and (max-width: 535px){
+  .link.RedesF{
+      scale: 0.9;
+      margin: 4px;
+      box-shadow: none;
+  }
+  .link.RedesF:hover{
+      width: 20%;
+  }
+}
+@media screen and (max-width: 380px){
+  .footerSeparador{
+      height: fit-content;
+      padding-bottom: 0;
+  }
+  .footerNav{
+      height: fit-content;
+  }
+  ol{
+      flex-direction: column;
+  }
+  .footerLogo{
+      margin-left: 18px;
+  }
+  .footerTitulo{
+      margin: 0;
+  }
+  .footerDescricao{
+      margin-top: 0;
+  }
+}
+ 
+ /* css mobile */
+ @media screen and (max-width: 720px){
+ 
+ nav{
+     padding: 0;
+     width:100%;
+     height: 10vh;
+     max-height: 12vh;
+     align-items: center;
+     flex-direction: row;
+     flex-wrap: wrap;
+     
+ }
+ .logo{
+     width: 8vh;
+ }
+ 
+ ul{
+     width: 22vh;
+     padding: 0 2px 0 0;
+     margin: 0;
+     flex-direction: column;
+     justify-items: center;
+     position: absolute;
+     top: 10vh;
+     right: 0;
+     height: 0;
+     background-color: var(--AzulTitulos);
+     transition: all 0.7s  ease-out;
+     overflow: hidden;
+     z-index: 1;       
+ }
+
+ /* classe que faz as animações de dropdown dos links da navbar */
+.list.show{
+    height: 280px;
+    background-color: var(--AzulTitulos);
+    overflow: hidden;
+    transition: all 0.7s  ease-out;
+}
+li{
+    margin: 10px auto 10px auto;
+    padding: 5px;
+}
+
+.containerH{
+  display: block;
+  margin: 0 10vw;
+  height: auto;
+  min-width: 46px;
+}
+
+ 
+ .containerRedes{
+     display: none;
+ }
+ 
+ .introducao{
+ font-size: 30pt;
+ width: 90%;
+ display: block;
+ position: relative;
+ font-weight: 700;
+ left: 10px;
+ top: 100px;
+ }
+ .btn{
+ display: block;
+ position: relative;
+ border-radius: 0;
+ left: 10px;
+ top: 150px;
+ }
+
+ /*Quem são mobile*/
+ .section-aboutus {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .section-aboutus--left {
+        margin: 0 30px 30px 30px;
+        text-align: center;
+    }
+    .default .section-title{
+        margin: 0;
+    }
+    .section-title{
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+    .section-aboutus--left a {
+        justify-content: center;
+        display: flex;
+        width: 150px;
+        margin: auto;
+    }
+    .section-aboutus--right {
+        width: auto;
+    }    
+    .section-aboutus--right img {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+    }
+}
+@media screen and (max-width: 500px){
+    .section-title1{
+        font-size: 28px;
+    }
+}
+
+     </style>
+ </head>
+ <body>
+     <!-- botão html das redes sociais -->
+     <div class="containerRedes">
+         <a href="https://www.instagram.com/" target="_blank" class="link link-1">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                 <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+             </svg>
+         </a>
+         <a href="https://github.com/Essencia-Litoranea" target="_blank" class="link link-2">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                 <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+             </svg>                   
+         </a>
+         <a href="https://www.instagram.com/" target="_blank" class="link link-3">
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                 <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+             </svg> 
+         </a>
+     </div>
+     <!-- botão de voltar ao topo e imagem ao fundo do inicio -->
+     <div class="ButtonUp"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24">
+         <path d="M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z"/></svg>
+     </div>
+     <!--imagem e textos, antes do conteúdo-->
+     <section class="comeco">
+             <nav class="navegacao">
+                 <a href="index1.html"><img id="Logo-Aqui" class="logo" src='assets/origens_img/logo.jpeg'></a>
+                 <div class="containerH">
+                     <div class="bar left top"></div><span class="bar right top"></span>
+                     <div class="bars index"></div>
+                     <div class="bars bottom"></div>
+                     <div class="bar left base"></div><div class="bar right base"></div>
+                 </div>
+                 <ul class="list">
+                     <li>
+                         <a href="#" class="links">Início</a>
+                     </li>
+                     <li>
+                         <a href="#" class="links actived">Origens</a>
+                     </li>
+                     <li>
+                         <a href="#" class="links">Lugares</a>
+                     </li>
+                     <li>
+                         <a href="#" class="links">Saberes</a>
+                     </li>
+                     <li>
+                         <a href="#" class="links">Cultura</a>
+                     </li>
+                 </ul>
+             </nav> 
+
+         <h1 class="introducao">Origens</h1>
+         <p class="introducaolegenda">Veja abaixo como os Caiçaras surgiram e as suas características.</p>
+         <button type="button" id="BtnInicio" class="btn btn-outline-light">Leia Mais</button>        
+     </section>
+ 
+     <!-- conteúdo principal -->
+     <main>
+         <!-- sessão Quem são-->
+         <section class="default">
+            <div class="section-title">Quem São?</div>
+        <div class="section-desc"></div>
+        <div class="section-body">
+            <div class="section-aboutus">
+                <div class="section-aboutus--left">
+                    <p>Caiçara é o nome dado à um dos diversos povos tradicionais brasileiros e como os vários outros apresenta sua própria forma de cultura e expressão.
+                      Ser caiçara vai além de uma definição técnica, é um estado de espírito que carrega consigo uma identidade geográfica. Eles são as pessoas que nasceram ou vivem nas regiões litorâneas, principalmente no Sul e Sudeste do estado de São Paulo. 
+                      Eles preservam muito a natureza e lutam para não "desaparecerem" como tatas outras culturas que foram sumindo conforme o desenvolvimento do Brasil.</p><br/>
+                </div>
+                <div class="section-aboutus--right">
+                    <img src="assets/origens_img/pescador.png"/>
+                </div>
+            </div>
+            
+        </div>
+ 
+         </section>
+
+
+         <!-- sessão Descendencia-->
+        <div class="descendencia">
+            <div class="section-title1">Descendência</div>
+            <div class="secao4" id="sobre">
+                <div class="secao4-div">
+                    <!-- Card 1 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img class="img-origem" src="assets/origens_img/miscigenação.png" alt="miscigenação">
+                            <h3> <br>
+                                 <br>
+                                Miscigenação
+                            </h3>
+                          </div>
+                          <div class="flip-card-back">
+                            <p> <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                 A interação entre indígenas, africanos trazidos como escravos e 
+                               colonizadores europeus criou uma fusão única de culturas que se 
+                               refletiu nos costumes, tradições e modos de vida dos caiçaras. Essa 
+                               rica miscigenação cultural é uma característica fundamental da identidade caiçara.</p>
+                          </div>
+                        </div>
+                      </div>
+            
+                    <!-- Card 2 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img class="img-origem" src="assets/origens_img/povos_indigenas.png" alt="miscigenação">
+                            <h3> <br>
+                                 <br>
+                                Indígenas
+                            </h3>
+                          </div>
+                          <div class="flip-card-back">
+                            <p> <br>
+                                <br>
+                                <br>
+                                <br>
+                                Os primeiros caiçaras eram, em sua maioria, descendentes de
+                                povos indígenas locais, como os tupinambás e guaranis, que habitavam as áreas
+                                costeiras. Essa é a principal influência da cultura caiçara que pode ser vista
+                                em quase tudo, um exemplo é o próprio nome caiçara que vem do tupi-guarani que
+                                faz referência às cercas que protegiam aldeias na época do descobrimento que
+                                significa e também a principal atividade econômica deles a PESCA.</p>
+                          </div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img class="img-origem" src="assets/origens_img/povos_portugueses.png" alt="miscigenação">
+                            <h3> <br>
+                                 <br>
+                                Portugueses
+                            </h3>
+                          </div>
+                          <div class="flip-card-back">
+                            <p> <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                À medida que os colonizadores europeus estabeleceram suas
+                            colônias, as comunidades indígenas foram gradualmente influenciadas e
+                            assimiladas pelas culturas europeias. Assim os caiçaras como a grande maioria de
+                            nós também foi influenciada pelos europeus, o principal traço dessa cultura na
+                            vida deles é a religião (catolicismo) e as celebrações aos santos.</p>
+                          </div>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="flip-card">
+                        <div class="flip-card-inner">
+                          <div class="flip-card-front">
+                            <img class="img-origem" src="assets/origens_img/povos_negros.png" alt="miscigenação">
+                            <h3> <br>
+                                 <br>
+                                Povos-Negros
+                            </h3>
+                          </div>
+                          <div class="flip-card-back">
+                            <p> <br>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                Esses povos foram trazidos para o Brasil como escravos a partir do século 16 no
+                            período colonial, porém eles também influenciaram na criação da cultura
+                            caiçara. Uma das influências desse povo na cultura caiçara pode ser visto nas
+                            roupas coloridas que são utilizadas em festividades
+                             </p>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+         <!-- sessão Caracteríticas -->
+        </br>
+        </br>
+         <div class="section-title1">Características</div>
+         <section class="container" style="height: fit-content; padding: 20px 0 90px 0">
+            <div class="card__container swiper" style="padding: 0">
+               <div class="card__content">
+                  <div class="swiper-wrapper">
+                     <article class="card__article swiper-slide">
+                        <div class="card__image">
+                           <img src="assets/origens_img/natureza.jpg" alt="image" class="card__img">
+                           <div class="card__shadow"></div>
+                        </div>
+         
+                        <div class="card__data">
+                           <h3 class="card__name">Caiçaras e a Natureza</h3>
+                           <p class="card__description">
+                            Sua ligação profunda com a natureza, especialmente o mar, é o traço distintivo mais marcante em relação à cultura caipira.  
+                        </br>
+                        </br>
+                        </br>
+                        </br>
+                           </p>
+         
+                        </div>
+                     </article>
+         
+                     <article class="card__article swiper-slide">
+                        <div class="card__image">
+                           <img src="assets/origens_img/historias.jpg" alt="image" class="card__img">
+                           <div class="card__shadow"></div>
+                        </div>
+         
+                        <div class="card__data">
+                           <h3 class="card__name">Tradição Oral</h3>
+                           <p class="card__description">
+                            Os caiçaras possuem uma rica tradição oral, transmitindo histórias, lendas e cantigas para as gerações mais jovens em rodas de histórias realizadas no centro de cada povoado.
+                            </br>
+                            </br>
+                            </p>
+         
+                        </div>
+                     </article>
+         
+                     <article class="card__article swiper-slide">
+                        <div class="card__image">
+                           <img src="assets/origens_img/pescador.jpg" alt="image" class="card__img">
+                           <div class="card__shadow"></div>
+                        </div>
+         
+                        <div class="card__data">
+                           <h3 class="card__name">Caiçaras X Ribeirinhos</h3>
+                           <p class="card__description">
+                            Enquanto os ribeirinhos tendem a se concentrar principalmente na pesca de peixes em geral, os caiçaras adotam uma abordagem mais diversificada em suas atividades de pesca (pescando vários tipos). 
+                           </p>
+         
+                        </div>
+                     </article>
+         
+                     <article class="card__article swiper-slide">
+                        <div class="card__image">
+                           <img src="assets/origens_img/caicara_mar.jpg" alt="image" class="card__img">
+                           <div class="card__shadow"></div>
+                        </div>
+         
+                        <div class="card__data">
+                           <h3 class="card__name">Caiçaras e o Mar</h3>
+                           <p class="card__description">
+                            A cultura caiçara é enriquecida pela sua profunda conexão com o ambiente marinho, moldando suas tradições, culinária e modo de vida de maneira única.
+                                </br>   
+                                </br>
+                                </br>
+                            </p>
+    
+                        </div>
+                     </article>
+   
+                     <article class="card__article swiper-slide">
+                        <div class="card__image">
+                           <img src="assets/origens_img/lenda.jpg" alt="image" class="card__img">
+                           <div class="card__shadow"></div>
+                        </div>
+         
+                        <div class="card__data">
+                           <h3 class="card__name">Lenda do Mar</h3>
+                           <p class="card__description">
+                            As histórias e lendas compartilhadas nas rodas de histórias caiçaras frequentemente refletem a relação do povo com o mar e seus mitos associados.
+                                </br>   
+                                </br>
+                                </br>
+                            </p>
+                        </div>
+                     </article>
+
+                     <article class="card__article swiper-slide">
+                        <div class="card__image">
+                           <img src="assets/origens_img/festa.jpg" alt="image" class="card__img">
+                           <div class="card__shadow"></div>
+                        </div>
+         
+                        <div class="card__data">
+                           <h3 class="card__name">Dia do Caiçara</h3>
+                           <p class="card__description">
+                            No dia 15 de março em São Sebastião Acontecem eventos reúnem moradores e visitantes em torno de danças típicas, comidas tradicionais, música ao vivo e manifestações culturais únicas da região.
+                           </p>
+                        </div>
+                     </article>
+                  </div>
+               </div>
+   
+               <!-- Navigation buttons -->
+               <div class="swiper-button-next">
+                  <i class="ri-arrow-right-s-line"></i>
+               </div>
+               
+               <div class="swiper-button-prev">
+                  <i class="ri-arrow-left-s-line"></i>
+               </div>
+   
+               <!-- Pagination -->
+               <div class="swiper-pagination"></div>
+            </div>
+         </section>
+         
+
+        </div>
+         <!-- sessão Consolidação -->
+         <section class="consolidacao" style="min-height:100vh; background-image: url(assets/origens_img/imagem_fundo.png); background-position: center; background-repeat: no-repeat; background-size: cover;">
+             
+            <div class="container1">
+                <div class="content">
+                    <h1>Consolidação dos Caiçaras</h1>
+                    <p>A consolidação dos caiçaras como uma comunidade cultural distinta no litoral brasileiro ocorreu ao longo de muitos séculos e foi moldada por uma série de fatores históricos, sociais e ambientais. Alguns fatores foram:</p>
+                    <br>
+                    - Estilo de Vida Costeiro;
+                    <br>
+                    - Isolamento Geográfico;
+                    <br>
+                    - Resiliência e Identidade Cultural;
+                    <br>
+                    - Ativismo e Reconhecimento Cultural.
+                    <ul>
+                        
+                </ul>
+            </div>
+
+         </section>
+
+        <footer>
+            <div class="footerSeparador">
+                <div class="footerLogo">
+                    <a href="origens.html"><img class="logo footer" src='assets/origens_img/logo.jpeg'></a>
+                <h4 class="footerTitulo">Essência Litorânea.</h4>
+            </div>
+                <div class="footerNav">
+                    <ol>
+                        <li><a href="OrigensCaicaras/origens.html" class="links actived">Origens</a></li>
+                        <li><a href="#" class="links">Lugares</a></li>
+                        <li><a href="SaberesCaicaras/Saberes.html" class="links">Saberes</a></li>
+                        <li><a href="CulturaCaicara/cultura.html" class="links">Cultura</a></li>
+                    </ol>
+                </div>
+            </div>
+            <p class="footerDescricao">Trabalho interdisciplinar, desenvolvido pelo 1° ano de desenvolvimento de sistemas da Etec de Carapicuíba</p>
+            <p class="ano">Caiçaras-2023</p>
+            <hr class="divisor">
+            <div class="footerRedes">
+                <a href="https://www.instagram.com/" target="_blank" class="link link-1 RedesF">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                        <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/" target="_blank" class="link link-2 RedesF">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                    </svg>                   
+                </a>
+                <a href="https://github.com/Essencia-Litoranea" target="_blank" class="link link-3 RedesF">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                    </svg> 
+                </a>
+            </div>
+        </footer>
+     </main>
+ 
+     
+ 
+ <!-- bootstrap javascript -->
+ <script>
+     // script para a tela ficar em um tamanho agradável no navegador mobile
+     window.addEventListener('resize', () => {
+         let vh = window.innerHeight * 0.01;
+     document.documentElement.style.setProperty('--vh', `${vh}px`);
+ });
+ 
+ //script para o menu aparecer
+ const container = document.querySelector('.containerH');
+ const ul =document.querySelector('.list');
+ 
+ container.addEventListener("click", ()=>{
+     
+     container.classList.toggle('active');
+     ul.classList.toggle('show');})
+     
+     //script para o botão do início
+     const botaoInicio = document.querySelector('#BtnInicio');
+     botaoInicio.addEventListener('click', ()=>{
+         window.scroll({
+             top: window.innerHeight, behavior:"smooth"
+         })
+     } )
+     
+     //botão de voltar para o topo
+         const botaoVoltar = document.querySelector('.ButtonUp');
+         botaoVoltar.addEventListener('click', ()=>{
+             window.scroll({
+                 top: 0, behavior:"smooth"
+             })
+         })
+         
+
+//caracteristicas
+
+
+
+//t carateristicas
+     </script>
+
+           <!--=============== SWIPER JS ===============-->
+           <script src="assets/js/swiper-bundle.min.js"></script>
+
+           <script src="assets/js/scrollreveal.min.js"></script>
+
+           <!--=============== MAIN JS ===============-->
+           <script src="assets/js/origens.js"></script>
+     
+
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+ </body>
+ </html>
+
+
+</body>
+</html>
