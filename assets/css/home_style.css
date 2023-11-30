@@ -876,26 +876,6 @@ input {
 	opacity: 1;
 }
 
-.card05_img{
-	background: url('/assets/img/card_giof.jpg') center center no-repeat;
-	background-size: 300px;
-  border-radius: 200px;
-}
-
-.card05_img:hover{
-	background: url('/assets/img/card_giof.jpg') left center no-repeat;
-	background-size: 600px;
-  border-radius: 400px;
-}
-
-.card05:hover h2{
-	opacity: 1;
-}
-
-.card05:hover .fa{
-	opacity: 1;
-}
-
 .name{
 	font-family: "Montserrat", sans-serif;
 	color: #000000;
