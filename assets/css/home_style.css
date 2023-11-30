@@ -793,6 +793,7 @@ input {
 	cursor: pointer;
 	margin: 1vw;
 	transition: 0.8s;
+	display: flex;
 }
 
 .card01_img{
@@ -875,6 +876,26 @@ input {
 	opacity: 1;
 }
 
+.card05_img{
+	background: url('/assets/img/card_giof.jpg') center center no-repeat;
+	background-size: 300px;
+  border-radius: 200px;
+}
+
+.card05_img:hover{
+	background: url('/assets/img/card_giof.jpg') left center no-repeat;
+	background-size: 600px;
+  border-radius: 400px;
+}
+
+.card05:hover h2{
+	opacity: 1;
+}
+
+.card05:hover .fa{
+	opacity: 1;
+}
+
 .name{
 	font-family: "Montserrat", sans-serif;
 	color: #000000;
@@ -883,40 +904,31 @@ input {
 	transition: opacity 1s;
 }
 
-.fa {
-  padding: 20px;
-  font-size: 30px;
-  width: 30px;
-  text-align: center;
-  text-decoration: none;
+.icons{
+  display: flex;
+  flex-direction: row;
+ justify-content: center;
+ padding-bottom: 20px;
 }
 
-/* Add a hover effect if you want */
-.fa:hover {
-  opacity: 0.7;
+.link-card{
+  color: #d904f5;
+  transition: all 0.5s ease;
 }
 
-/* Set a specific color for each brand */
-
-/* Facebook */
-.fa-github {
-  color: rgb(255, 255, 255);
-  background-color: #555;
-  border-radius: 20px;
-}
-
-/* Linkedin */
-.fa-linkedin {
+.link-card:hover{
   color: white;
-  background-color: #60849C;
-  border-radius: 20px;
+  background-color: #d904f5;
 }
 
-/* Instagram */
-.fa-instagram {
+.link-card1{
+  color: #4d4d4d;
+  transition: all 0.5s ease;
+}
+
+.link-card1:hover{
   color: white;
-  background-color: #ce1cb9;
-  border-radius: 20px;
+  background-color: #4d4d4d;
 }
 
 /*Gallery*/
