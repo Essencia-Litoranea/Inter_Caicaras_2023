@@ -1,0 +1,917 @@
+/* gerais */
+    :root{
+        /* Paleta de cores:
+            -a cor neutra escura vai ser usada para acentuar algo em contraste com
+            a cor neutra mais clara ou branco
+            -a cor neutra clara vai servir pra mostrar a inatividade dos
+            tópicos do menu, alem de ser um bom suavizador de fundo quando estivermos
+            usando branco demais no fundo
+            -o azul titulos vai ser usado em locais de destaque tambem,
+            para acentuar algo em um fundo claro...*/
+        --Neutro: #9E9282;
+        --AzulTitulos: #60849C;
+        --AzulClaro: #dae4eb;
+        --NeutroClaro: #EAE3D9;
+        --Light: #FEFEFE;
+    }
+    /* configurações da página */
+        html{
+            scroll-behavior: smooth;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            }
+
+        body{
+            background-color: #e0e1ed;
+            font-family: 'Sora', sans-serif;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+    }
+    /* 🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑botao das redes sociaissss🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑🦑*/
+        .containerRedes{
+            width: fit-content;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: space-evenly;
+            background-color: #b6b0b0;
+            transition: all ease 0.6s;
+            position: absolute;
+            z-index: 1000;
+            top: 44%;
+            right: 0;
+        }
+
+        .containerRedes:hover{
+            background-color: #857d7d;
+        }
+
+        .link{
+            background-color: #f7f5f5;
+            width: 35px;
+            height: 35px;
+            box-shadow: 0 0 8px #0000005a;
+            margin: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50px;
+            font-size: 40px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s;
+        }
+
+        .link svg{
+            z-index: 10;
+            scale: 1.2;
+            transition: 0.2s;
+        }
+
+        .link:hover svg{
+            color: #ffffff;
+            transform: scale(1.3);
+        }
+
+        .link-1{
+            color: rgb(114, 162, 207);
+        }
+
+        .link-2{
+            color: rgb(221, 206, 120);
+        }
+
+        .link-3{
+            color: rgb(114, 162, 207);
+        }
+
+        .link-1:hover{
+            background-color: rgb(114, 162, 207);
+        }
+        .link-2:hover{
+            background-color:  rgb(221, 206, 120);
+        }
+        .link-3:hover{
+            background-color: rgb(114, 162, 207);
+        }
+    /* header em telas maiores /////////////*/
+        .logo{
+            width: 10vh;
+            border-radius: 50%;
+            margin: 1vw 0 0 8vw;
+        }
+        a{
+            color: var(--NeutroClaro);
+            text-decoration: none;
+            transition: all 0.5s ease;
+            position: relative;
+
+        }
+        nav{
+            width: 100%;
+            z-index: 10000;
+            position: absolute;
+            top: 0;
+            /* background-color: var(--AzulTitulos); */
+            background-color: transparent;
+            display: flex;
+            height: 10vh;
+            flex-direction: row wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 30px;
+        }
+        ul{
+            display: flex;
+            list-style-type: none;
+            margin-right: 8vw;
+        }
+        li{
+            margin: 0 2.2vw;
+        }
+    /* barrinhas abaixo dos links */
+        a.links::after,::before{
+            content: ' ';
+            width: 10%;
+            height: 2.2px;
+            background-color: var(--Light);
+            position: absolute;
+            bottom: -5px;
+            opacity: 0;
+            transition: all 0.7s ease;
+        }
+
+        a.links::after{
+            left: 50%;
+        }
+
+        a.links::before{
+            right: 50%;
+        }
+
+        a:hover{
+            color: var(--Light);
+        }
+
+        a.links:hover::after{
+            opacity: 1;
+            width: 50%;
+        }
+
+        a.links:hover::before{
+            opacity: 1;
+            width: 50%;
+        }
+
+        a.links.actived::before{
+            width: 50%;
+            opacity: 1;
+        }
+
+        a.links.actived::after{
+            width: 50%;
+            opacity: 1;
+        }
+    /* css do menu hamburguer */
+        .containerH{
+            height: auto;
+            width: auto;
+            position: relative;
+            padding: 4px 8px 4px 8px;
+            overflow: hidden;
+            display: none;
+        }
+
+        .bars{
+            background-color: var(--NeutroClaro);
+            height: 1.5px;
+            width: 28px;
+            margin-top: 4.5px;
+            transition: all 0.3s ease;
+
+        }
+
+        .bars.index{
+            background-color: var(--NeutroClaro);
+            position: absolute;
+        }
+        .bar.left, .bar.right{
+            display: inline-block;
+            position: relative;
+            background-color: var(--NeutroClaro);
+            width: 14px;
+            height: 1.5px;
+            transition: all 0.3s ease;
+        }
+        .bar.base{
+            margin-bottom: 8px;
+        }
+        .bar.top{
+            padding: 0;
+            top: 4px;
+
+        }
+        .containerH:hover{
+            cursor: pointer;
+        }
+        .containerH.active .bar.left{
+            translate: -35px;
+        }
+        .containerH.active .bar.right{
+            translate: 35px;
+        }
+
+        .containerH.active .bars.index{
+            rotate: -45deg;
+            background-color: rgb(142, 31, 31)
+        }
+
+        .containerH.active .bars.bottom{
+            rotate: 45deg;
+            background-color: rgb(232, 97, 97);
+        }
+    /* css versão de celular */
+        @media screen and (max-width: 720px) {
+        /* header responsivo */
+            nav{
+                padding: 0;
+                width:100%;
+                height: 10vh;
+                max-height: 12vh;
+                align-items: center;
+                flex-direction: row;
+                flex-wrap: wrap;
+                z-index: 1000;
+            }
+            .logo{
+                width: 8vh;
+            }
+
+            ul{
+                width: 22vh;
+                padding: 0 2px 0 0;
+                margin: 0;
+                flex-direction: column;
+                justify-items: center;
+                position: absolute;
+                top: 10vh;
+                right: 0;
+                height: 0;
+                background-color: var(--AzulTitulos);
+                transition: all 0.7s  ease-out;
+                overflow: hidden;
+            }
+            /* classe que faz as animações de dropdown dos links da navbar */
+            .list.show{
+                height: 280px;
+                background-color: var(--AzulTitulos);
+                overflow: hidden;
+                transition: all 0.7s  ease-out;
+                z-index: 1000;
+            }
+            li{
+                margin: 10px auto 10px auto;
+                padding: 5px;
+            }
+            .containerH{
+                display: block;
+                margin: 0 10vw;
+                height: auto;
+                min-width: 46px;
+            }
+        }
+    /* 🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼footerrr 🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼🪼*/
+        footer{
+            width: 100%;
+            min-height: 260px;
+            height: fit-content;
+            background-color: var(--AzulTitulos);
+        }
+        .footerSeparador{
+            display: flex;
+            padding: 15px 20px 8px 2vw;
+            align-items: center;
+            justify-content: space-around;
+        }
+        .logo.footer{
+            margin: 0 10px 0 0;
+            width: 65px;
+        }
+        ol{
+            list-style: none;
+            display: flex;
+            color: #cbcbcb;
+            font-weight: lighter;
+        }
+        ol>*:hover{
+            color: var(--Light);
+            transition: all 0.8s linear;
+            text-decoration: underline;
+        }
+        .footerTitulo{
+            width: fit-content;
+            margin-top: 10px;
+            color: var(--Light);
+            font-weight: bold;
+
+        }
+        .footerNav{
+            margin-top: 15px;
+            width: fit-content;
+            float: right;
+            margin-left: 0;
+        }
+        .footerLogo{
+            width: fit-content;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        .divisor{
+            width: 95%;
+            color: #fff;
+            margin: 1% auto 1% auto;
+        }
+        .footerDescricao{
+            color: #cbcbcb;
+            font-size: 12px;
+            margin: 15px 0 0 10%;
+            max-width: 270px;
+        }
+        .footerRedes{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 0 0 20px 0;
+        }
+        .link.RedesF{
+            scale: 0.9;
+            margin: 4px;
+            box-shadow: none;
+        }
+        .link.RedesF:hover{
+            width: 8%;
+        }
+        .ano{
+            text-align: center;
+            margin: 15px 0 5px 0;
+            color: var(--Light);
+        }
+        @media screen and (max-width: 720px){
+            .containerRedes{
+                display: none;
+            }
+        }
+        /* footer responsivo */
+        @media screen and (max-width: 810px){
+            .footerSeparador{
+                flex-direction: column;
+            }
+            ol{
+                padding: 0;
+            }
+            .footerSeparador{
+                padding: 15px 0;
+            }
+            .link.RedesF:hover{
+                width: 15%;
+            }
+        }
+        @media screen and (max-width: 535px){
+            .link.RedesF{
+                scale: 0.9;
+                margin: 4px;
+                box-shadow: none;
+            }
+            .link.RedesF:hover{
+                width: 20%;
+            }
+        }
+        @media screen and (max-width: 380px){
+            .footerSeparador{
+                height: fit-content;
+                padding-bottom: 0;
+            }
+            .footerNav{
+                height: fit-content;
+            }
+            ol{
+                flex-direction: column;
+            }
+            .footerLogo{
+                margin-left: 18px;
+            }
+            .footerTitulo{
+                margin: 0;
+            }
+            .footerDescricao{
+                margin-top: 0;
+            }
+        }
+    /* botão voltar para cima---------------- */
+        .ButtonUp{
+            width: 7vh;
+            height: 7vh;
+            cursor: pointer;
+            background-color: var(--Neutro);
+            border-radius: 50%;
+            position: fixed;
+            display: flex;
+            right: 15px;
+            bottom: 15px;
+            align-items: center;
+            justify-content: center;
+            font-size: 5vh;
+            z-index: 1000;
+        }
+/* /////////////////////////////////////////////// */
+/* textos e paragrafos diversos */
+    .BemVindo{
+        font-size: 55pt;
+        width: fit-content;
+        display: block;
+        position: absolute;
+        font-weight: 700;
+        left: 130px;
+        top: 200px;
+        color: #FEFEFE;
+    }
+    .BemVindoLegenda{
+        font-size: 15pt;
+        display: block;
+        width: 700px;
+        position: relative;
+        left: 130px;
+        top: 170px;
+    }
+    .carousel-inner p{
+        font-size: 15pt;
+        display: block;
+        width: 700px;
+        position: absolute;
+        left: 130px;
+        top: 330px;
+        z-index: 999;
+        color: #FEFEFE;
+    }
+    .titulo{
+        color: var(--AzulTitulos);
+        font-size: 38px;
+        font-weight: 750;
+        position: relative;
+        top: 65px;
+        text-align: center;
+    }
+
+    h5{
+        font-size: 55pt;
+        width: fit-content;
+        display: block;
+        position: absolute;
+        font-weight: 700;
+        left: 70px;
+        top: 200px;
+        z-index: 10000;
+        color: #FEFEFE;
+    }
+    @media screen and (max-width: 800px){
+        .BemVindo{
+            font-size: 50pt;
+    
+        }
+        .BemVindoLegenda{
+            width: 600px;
+        }
+
+        .carousel-inner p{
+            font-size: 15pt;
+            text-align: justify;
+            width: 200px;
+            left: 75px;
+        }
+        .titulo{
+            font-size: 31px;
+        }
+    }
+    @media screen and (max-width: 400px){
+        .BemVindoLegenda{
+            width: 200px;
+            font-size: 28px;
+        }
+        .carousel-inner p{
+            top: 280px;
+            font-size: 18px;
+            width: 280px;
+            left: 60px;
+            text-align: justify;
+        }
+    }
+    
+    @media screen and (max-width: 450px){
+        .BemVindoLegenda{
+            font-size: 31px;
+        }
+        .carousel-inner p{
+            top:280px;
+            width: 280px;
+            left: 60px;
+            text-align: justify;
+        }
+    }
+    
+/* //////////////////////////////////////////s */
+ /* configs carousel inicio */
+    .item-di{
+        height: 100vh;
+    }
+    .img-di{
+        height:100vh;
+        object-fit: cover;
+        filter: brightness(0.6);
+    }
+    .control{
+        top: 420px;
+        left: 130px;
+        border-radius: 100px;
+        background-color: #eee5;
+        border: none;
+        width: 40px;
+        height: 40px;
+        color: #eee;
+    }
+    .control2{
+        top: 420px;
+        left: 185px;
+        border-radius: 100px;
+        background-color: #eee5;
+        border: none;
+        width: 40px;
+        height: 40px;
+        color: #eee;
+    }
+/* ///////////////////////////////////////// */
+/* section região */
+    .sectionLocalizacao{
+        height: calc(var(--vh, 1vh) * 100);
+        overflow: hidden;
+        background-color: #d8e6e7;
+    }
+    .divLocalizacao{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        background-color: #d8e6e7;
+    }
+    .center{
+        width: 70%;
+        margin: 30px 0 5px 0;
+        height: fit-content;
+    }
+    .regiaoparagrafos{
+        width: 50%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        justify-content: center;
+        justify-items: center;
+        align-items: center;
+    }
+    .textoregiao{
+        font-size: 18px;
+        color: #565656;
+        text-align: justify;
+    }
+    span{
+        font-weight: 600;
+    }
+    .video{
+        height: 590px;
+        width: 590px;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+    /* responsive localizacao*/
+    @media screen and (min-width: 1700px){
+        .video{
+            width: 80%;
+            height: 80%;
+        }
+        .BemVindo{
+            font-size: 75pt;
+        }
+        .carousel-inner p{
+            font-size: 20pt;
+            width: 700px;
+            left: 130px;
+        }
+        .control{
+            top: 500px;
+        }
+        .control2{
+            top: 500px;
+        }
+    }
+    @media screen and (max-width: 1040px){
+        .center{
+            width: 90%;
+            height: 570px;
+        }
+
+        .textoregiao{
+            margin-top: 30px;
+        }
+
+
+    }
+    @media screen and (max-width: 940px){
+        .sectionLocalizacao{
+            height: fit-content;
+        }
+        .divLocalizacao{
+            flex-direction: column;
+        }
+        .video{
+            height: 350px;
+            width: 190px;
+        }
+        .regiaoparagrafos{
+            width: 92%;
+            height: 100%;
+        }
+        .center{
+            width: 100%;
+            height: 100%;
+        }
+        .textoregiao{
+            margin-top: 60px;
+        }
+        .control{
+            display: none;;
+        }
+        .control2{
+            display: none;
+        }
+        .BemVindo{
+            font-size: 20pt;
+            left: 55px;
+        }
+        .carousel-inner p{
+            font-size: 15px;
+            width: 250px;
+            top: 250px;
+            left: 55px;
+        }
+        .arrows{
+            display: none;
+        }
+}
+/* /////////////////////////////////////////////////////////////////////////// */
+/* section locais de importância */
+    .img-card{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 15px;
+        filter: brightness(0.6);
+    }
+    .card{
+        width: 270px;
+        height: 430px;
+        border-radius: 20px;
+        overflow: hidden;
+        display: inline-block;
+        justify-content: center;
+        border: 8px solid #FEFEFE;
+        position: relative;
+        top: 100px;
+        margin-left: 10%;
+        align-items: center;
+    }
+    .card-body{
+        color: #FEFEFE;
+        width: 270px;
+        height: 380px;
+        bottom: -65%;
+        /* right: -150%; */
+        position: absolute;
+        /* background: #9e928296; */
+        background-color: #9e9282d0;
+        border-radius: 15px;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transition: 800ms;
+    }
+    .card:hover .card-body{
+        /* right: 0; */
+        bottom: 0;
+    }
+    .card-title{
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: 600;
+        margin: 30px;
+
+    }
+    .card-info{
+        font-size: 16px;
+        line-height: 25px;
+        margin: 30px 0;
+        font-weight: 400;
+    }
+    @media screen and (max-width: 940px){
+        .img-card{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            filter: brightness(0.6);
+        }
+        .cards{
+            display: flex;
+            flex-direction: column;
+        }
+        .card{
+            left: 5%;
+            right: 50%;
+            justify-content: center;
+        }
+        .card-info{
+            font-size: 17px;
+        }
+    }
+
+/* ////////////////////////////////////////////////////// */
+/* slider section outras paisagens */
+    @keyframes showContent {
+        to{
+            transform: translateY(0);
+            filter: blur(0);
+            opacity: 1;
+        }
+}
+    .slider{
+        height: 100vh;
+        position: relative;
+    }
+    .slider .list .item{
+        position: absolute;
+        inset: 0 0 0 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: .5s;
+    }
+    .slider .list .item img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.6);
+    }
+    .slider .list .item::after{
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+    }
+    .slider .list .item .content{
+        position: absolute;
+        left: 10%;
+        top: 10%;
+        width: 500px;
+        max-width: 80%;
+        z-index: 1;
+        color: #FEFEFE;
+    }
+
+    .slider .list .item .content p{
+        font-size: 20px;
+        width: 600px;
+    }
+
+    .slider .list .item .content p:nth-child(1){
+        display: block;
+        width: 700px;
+        position: absolute;
+        z-index: 1000;
+        color: #FEFEFE;
+    }
+    .titleslide{
+        margin-top: 80px;
+        font-size: 31px;
+        font-weight: 550;
+    }
+    #principalslider{
+        font-size: 25px;
+        text-transform: uppercase;
+    }
+    .slider .list .item.active{
+        opacity: 1;
+        z-index: 10;
+    }
+    .thumbnail{
+        position: absolute;
+        bottom: -10px;
+        z-index: 11;
+        display: flex;
+        gap: 50px;
+        left: 80px;
+        width: 80%;
+        height: 250px;
+        padding: 0 50px;
+        box-sizing: border-box;
+        overflow: auto;
+    }
+    .thumbnail::-webkit-scrollbar{
+        width: 0;
+    }
+    .thumbnail .item{
+        width: 150px;
+        height: 220px;
+        filter: brightness(.5);
+        transition: .5s;
+        flex-shrink: 0;
+    }
+    .thumbnail .item img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+    .thumbnail .item.active{
+        filter: brightness(1.0);
+    }
+    .thumbnail .item .content{
+        position: absolute;
+        inset: auto 10px 10px 10px;
+        color: #FEFEFE;
+        font-weight: 200;
+    }
+    .arrows{
+        position: absolute;
+        top: 320px;
+        left: 140px;
+        z-index: 100;
+    }
+    .arrows button{
+        background-color: #eee5;
+        border: none;
+        font-family: monospace;
+        width: 40px;
+        height: 40px;
+        border-radius: 100px;
+        font-size: x-large;
+        color: #eee;
+        transition: .5s;
+    }
+    .arrows button:hover{
+        background-color: #eee;
+        color: black;
+    }
+    @media screen and (max-width: 1040px){
+        .thumbnail{
+            position: absolute;
+            bottom: -5px;
+            z-index: 11;
+            display: flex;
+            gap: 10px;
+            width: 100%;
+            height: 250px;
+            padding: 0 50px;
+            box-sizing: border-box;
+            overflow: auto;
+        }
+    }
+    @media screen and (max-width: 940px){
+        .slider .list .item .content p{
+            font-size: 18px;
+        }
+    }
+    @media screen and (max-width: 800px){
+        #principalslider{
+            font-size: 18px;
+        }
+        .thumbnail{
+            gap: 5px;
+            left: -10px;
+            bottom: 5px;
+            overflow-y: hidden;
+        }
+        .slider .list .item .content p{
+            font-size: 16px;
+            width: 280px;
+        }
+    }
