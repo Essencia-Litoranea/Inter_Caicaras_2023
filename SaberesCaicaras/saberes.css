@@ -973,12 +973,6 @@ ol>*:hover {
 
 }
 
-@media screen and (max-width: 720px) {
-    .containerRedes {
-        display: none;
-    }
-}
-
 /* footer responsivo */
 @media screen and (max-width: 810px) {
     .footerSeparador {
@@ -1165,9 +1159,6 @@ ol>*:hover {
     z-index: 1;
 }
 
-/* .containerRedes {
-    display: none;
-} */
 
 .introducao {
     font-size: 22pt;
@@ -1194,4 +1185,10 @@ ol>*:hover {
     border-radius: 0;
     left: 10px;
     top: 150px;
+}
+
+@media screen and (max-width: 720px) {
+    .containerRedes {
+        display: none;
+    }
 }
