@@ -324,7 +324,6 @@ a.links.actived::after{
 .texto{
     margin-top: 12px;
     font-size: 20px;
-    font-weight: 100;
     text-align: center;
     color: #565656;
 }
@@ -907,7 +906,6 @@ ol{
     display: flex;
     transition: all 0.8s linear;
     color: #cbcbcb;
-    font-weight: lighter;
 }
 ol>*:hover{
     color: var(--Light);
