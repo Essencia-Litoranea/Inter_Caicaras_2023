@@ -295,7 +295,7 @@ a.links.actived::after{
 }
 @media screen and (max-width: 800px){
     .BemVindo{
-        font-size: 50pt;
+        font-size: 60pt;
 
     }
     .BemVindoLegenda{
@@ -910,7 +910,6 @@ ol{
 ol>*:hover{
     color: var(--Light);
     transition: all 0.8s linear;
-    text-decoration: underline;
 }
 .footerTitulo{
     width: fit-content;
@@ -1061,7 +1060,7 @@ ol>*:hover{
     }
 
 .BemVindo{
-    font-size: 22pt;
+    font-size: 25pt;
     width: 90%;
     display: block;
     position: relative;
@@ -1070,7 +1069,7 @@ ol>*:hover{
     top: 100px;
 }
 .BemVindoLegenda{
-    font-size: 10pt;
+    font-size: 28px;
     display: block;
     width: 85%;
     position: relative;

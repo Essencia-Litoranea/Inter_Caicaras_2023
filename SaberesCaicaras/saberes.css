@@ -910,7 +910,7 @@ ol {
 ol>*:hover {
     color: var(--Light);
     transition: all 0.8s linear;
-    text-decoration: underline;
+
 }
 
 .footerTitulo {
@@ -1191,4 +1191,29 @@ ol>*:hover {
     .containerRedes {
         display: none;
     }
+    
+.BemVindo{
+    font-size: 25pt;
+    width: 90%;
+    display: block;
+    position: relative;
+    font-weight: 700;
+    left: 10px;
+    top: 100px;
+}
+.BemVindoLegenda{
+    font-size: 28px;
+    display: block;
+    width: 85%;
+    position: relative;
+    left: 10px;
+    top: 110px;
+}
+.btn{
+    display: block;
+    position: relative;
+    border-radius: 0;
+    left: 10px;
+    top: 150px;
+}
 }
