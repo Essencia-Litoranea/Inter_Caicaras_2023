@@ -490,7 +490,6 @@
 
         .carousel-inner p{
             font-size: 15pt;
-            text-align: justify;
             width: 200px;
             left: 75px;
         }
@@ -508,7 +507,6 @@
             font-size: 18px;
             width: 280px;
             left: 60px;
-            text-align: justify;
         }
     }
     
@@ -520,7 +518,6 @@
             top:280px;
             width: 280px;
             left: 60px;
-            text-align: justify;
         }
     }
     
@@ -588,7 +585,6 @@
     .textoregiao{
         font-size: 18px;
         color: #565656;
-        text-align: justify;
     }
     span{
         font-weight: 600;
