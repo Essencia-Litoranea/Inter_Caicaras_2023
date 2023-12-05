@@ -674,7 +674,7 @@
             font-size: 31px
         } 
         .cards{
-            margin-left: 10%;
+            margin-left: auto;
         }
         .indicadores{
             margin-bottom: 80px;
@@ -744,7 +744,7 @@
         border: 8px solid #FEFEFE;
         position: relative;
         top: 100px;
-        margin-left: 10%;
+        margin-left: auto;
         align-items: center;
     }
     .card-body{
@@ -964,4 +964,17 @@
             font-size: 16px;
             width: 280px;
         }
+    }
+    @media screen and (max-width: 600px){
+
+       .textoregiao p{
+        font-size: 17px !important;
+       }
+       .regiaoparagrafos{
+        padding: 0;
+       }
+       .center{
+        width: 100%;
+        padding-left: auto;
+       }
     }
