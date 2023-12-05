@@ -980,11 +980,10 @@
     }
     @media screen and (max-width: 530px){
         .BemVindo{
-            left: 10px;
+            left: 30px;
         }
         .carousel-inner p {
-            top: 110px;
-            left: 10px;
+            left: 30px;
         }
         .thumbnail{
             margin-bottom: 2%;
