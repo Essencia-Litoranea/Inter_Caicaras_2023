@@ -1159,26 +1159,6 @@ ol>*:hover {
     z-index: 1;
 }
 
-
-.introducao {
-    font-size: 22pt;
-    width: 90%;
-    display: block;
-    position: relative;
-    font-weight: 700;
-    left: 10px;
-    top: 100px;
-}
-
-.introducaolegenda {
-    font-size: 10pt;
-    display: block;
-    width: 85%;
-    position: relative;
-    left: 10px;
-    top: 110px;
-}
-
 .btn {
     display: block;
     position: relative;
@@ -1192,7 +1172,7 @@ ol>*:hover {
         display: none;
     }
     
-.BemVindo{
+.introducao{
     font-size: 25pt;
     width: 90%;
     display: block;
@@ -1201,7 +1181,7 @@ ol>*:hover {
     left: 10px;
     top: 100px;
 }
-.BemVindoLegenda{
+.introducaolegenda{
     font-size: 28px;
     display: block;
     width: 85%;

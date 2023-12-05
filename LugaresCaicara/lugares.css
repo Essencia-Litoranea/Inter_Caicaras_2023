@@ -627,7 +627,8 @@
             margin-bottom: 170px;
         }
         .cards{
-            margin-left: 6%;
+            margin-left: auto;
+            margin-right: auto;
         }
         .indicadores{
             margin-bottom: 80px;
@@ -674,6 +675,7 @@
             font-size: 31px
         } 
         .cards{
+            margin-right: auto;
             margin-left: auto;
         }
         .indicadores{
@@ -743,8 +745,9 @@
         justify-content: center;
         border: 8px solid #FEFEFE;
         position: relative;
-        top: 100px;
+        margin-right: auto;
         margin-left: auto;
+        top: 100px;
         align-items: center;
     }
     .card-body{
@@ -965,13 +968,33 @@
             width: 280px;
         }
     }
-    @media screen and (max-width: 600px){
+    @media screen and (max-width: 530px){
+        .BemVindo{
+            font-size: 25pt;
+            width: 90%;
+            display: block;
+            position: relative;
+            font-weight: 700;
+            left: 10px;
+            top: 100px;
+        }
+        .BemVindoLegenda{
+            font-size: 28px;
+            display: block;
+            width: 85%;
+            position: relative;
+            left: 10px;
+            top: 110px;
+        }
+        .thumbnail{
+            margin-bottom: 2%;
+        }
         .textoregiao{
             width: 300px;
         }
        .textoregiao p{
         font-size: 17px !important;
-        width: 300px;
+        width: 300px !important;
        }
        .regiaoparagrafos{
         padding: 0;
