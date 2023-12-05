@@ -971,6 +971,7 @@
         }
        .textoregiao p{
         font-size: 17px !important;
+        width: 300px;
        }
        .regiaoparagrafos{
         padding: 0;
