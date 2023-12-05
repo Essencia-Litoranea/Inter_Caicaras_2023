@@ -599,7 +599,7 @@
     /* responsive localizacao*/
     @media screen and (min-width: 1700px){
         .video{
-            width: 80%;
+            width: 50%;
             height: 80%;
         }
         .BemVindo{
@@ -611,10 +611,29 @@
             left: 130px;
         }
         .control{
-            top: 500px;
+            top: 550px;
         }
         .control2{
-            top: 500px;
+            top: 550px;
+        }
+        .textoregiao{
+            font-size: 25px;
+            width: 700px;
+        }
+        .textoregiao h3{
+            font-size: 31px
+        } 
+        .thumbnail{
+            margin-bottom: 170px;
+        }
+        .cards{
+            margin-left: 6%;
+        }
+        .indicadores{
+            margin-bottom: 80px;
+        }
+        .titulo{
+            font-size: 41px;
         }
     }
     @media screen and (max-width: 1040px){
@@ -622,12 +641,47 @@
             width: 90%;
             height: 570px;
         }
-
         .textoregiao{
             margin-top: 30px;
         }
-
-
+        .video{
+            width: 60%;
+            height: 80%;
+        }
+        .BemVindo{
+            font-size: 75pt;
+        }
+        .carousel-inner p{
+            font-size: 20pt;
+            width: 700px;
+            left: 130px;
+        }
+        .textoregiao{
+            font-size: 25px;
+            width: 700px;
+            margin-top: 30px;
+        }
+        .thumbnail{
+            margin-bottom: 170px;
+        }
+        .control{
+            top: 550px;
+        }
+        .control2{
+            top: 550px;
+        } 
+        .textoregiao h3{
+            font-size: 31px
+        } 
+        .cards{
+            margin-left: 10%;
+        }
+        .indicadores{
+            margin-bottom: 80px;
+        }
+        .titulo{
+            font-size: 41px;
+        }
     }
     @media screen and (max-width: 940px){
         .sectionLocalizacao{
