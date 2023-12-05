@@ -1060,7 +1060,7 @@ ol>*:hover{
     }
 
 .BemVindo{
-    font-size: 25pt;
+    font-size: 27pt;
     width: 90%;
     display: block;
     position: relative;
@@ -1069,7 +1069,7 @@ ol>*:hover{
     top: 100px;
 }
 .BemVindoLegenda{
-    font-size: 28px;
+    font-size: 12pt;
     display: block;
     width: 85%;
     position: relative;
