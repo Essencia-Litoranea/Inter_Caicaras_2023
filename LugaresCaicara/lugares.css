@@ -596,6 +596,13 @@
         justify-content: center;
         align-content: center;
     }
+    .cards{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-left: auto;
+        margin-right: auto;
+    }
     /* responsive localizacao*/
     @media screen and (min-width: 1700px){
         .video{
