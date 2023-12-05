@@ -966,7 +966,9 @@
         }
     }
     @media screen and (max-width: 600px){
-
+        .textoregiao{
+            width: 300px;
+        }
        .textoregiao p{
         font-size: 17px !important;
        }
