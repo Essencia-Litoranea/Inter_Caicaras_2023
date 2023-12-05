@@ -970,21 +970,11 @@
     }
     @media screen and (max-width: 530px){
         .BemVindo{
-            font-size: 25pt;
-            width: 90%;
-            display: block;
-            position: relative;
-            font-weight: 700;
             left: 10px;
-            top: 100px;
         }
-        .BemVindoLegenda{
-            font-size: 28px;
-            display: block;
-            width: 85%;
-            position: relative;
-            left: 10px;
+        .carousel-inner p {
             top: 110px;
+            left: 10px;
         }
         .thumbnail{
             margin-bottom: 2%;
@@ -1002,5 +992,6 @@
        .center{
         width: 100%;
         padding-left: auto;
+        padding-right: auto;
        }
     }
